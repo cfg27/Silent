@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Relaxing Mind Dashboard</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(to right, #dbe6e4, #f1f4f8);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      text-align: center;
+      color: #333;
+    }
+
+    h1 {
+      font-size: 2.8em;
+      margin-bottom: 0.5em;
+    }
+
+    .quote {
+      font-size: 1.5em;
+      font-style: italic;
+      margin-bottom: 2em;
+      max-width: 600px;
+      transition: opacity 0.5s ease;
+    }
+
+    .breathe-button {
+      padding: 15px 30px;
+      font-size: 1.2em;
+      border: none;
+      border-radius: 30px;
+      background-color: #a8dadc;
+      color: white;
+      cursor: pointer;
+      animation: breathe 4s infinite;
+      transition: background-color 0.3s;
+    }
+
+    .breathe-button:hover {
+      background-color: #74c4c4;
+    }
+
+    @keyframes breathe {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.05); }
+      100% { transform: scale(1); }
+    }
+
+    audio {
+      position: absolute;
+      bottom: 10px;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>🧘‍♀️ Relaxing Mind Dashboard</h1>
+
+  <div class="quote" id="quote">
+    <!-- Quote will be inserted here -->
+  </div>
+
+  <button class="breathe-button" onclick="breathe()">Breathe</button>
+
+  <!-- Optional background music -->
+  <audio autoplay loop>
+    <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+  </audio>
+
+  <script>
+    const quotes = [
+      "Breathe in deeply, and let go of what you can't control.",
+      "Silence is a source of great strength.",
+      "You are not a drop in the ocean. You are the entire ocean in a drop. – Rumi",
+      "Feel the calm in your breath, and let it guide your mind.",
+      "Peace comes from within. Do not seek it without.",
+      "Let today be a moment of stillness."
+    ];
+
+    // Pick a random quote on load
+    const quoteElement = document.getElementById('quote');
+    const randomQuote = quotes[Math.floor(Math.random() * quotes.length)];
+    quoteElement.textContent = `"${randomQuote}"`;
+
+    // Breathe function
+    function breathe() {
+      alert("Inhale… Hold… Exhale… Feel the calm.");
+    }
+  </script>
+
+</body>
+</html>
